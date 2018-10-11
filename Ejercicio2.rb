@@ -22,3 +22,5 @@ print nombres.map { |x| x.downcase }
 print nombres.select { |x| x.start_with?("P") }
 # .map (1st)
 print nombres.map { |x| x.length }
+# .map (2nd)
+print nombres.map { |x| x.gsub(/[aeiou]/,'')}
