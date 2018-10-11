@@ -18,4 +18,6 @@ a = [1, 2, 3, 9, 1, 4, 5, 2, 3, 6, 6]
 print a.map { |x| x + 1 }
 # 2:
 print a.map { |x| x.to_f }
-
+# 3:
+print a.map { |x| x.to_s }
+# 4:
