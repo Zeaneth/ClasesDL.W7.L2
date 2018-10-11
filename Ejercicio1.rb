@@ -22,5 +22,7 @@ print a.map { |x| x.to_f }
 print a.map { |x| x.to_s }
 # 4:
 print a.reject { |x| x < 5 }
-#5 :
+# 5:
 print a.select { |x| x > 5 }
+# 6:
+puts a.inject { |sum,x| sum + x }
