@@ -28,3 +28,5 @@ print a.select { |x| x > 5 }
 puts a.inject { |sum,x| sum + x }
 # 7:
 puts a.group_by { |x| x.even? }
+# 8:
+puts a.group_by { |x| x < 6 }
