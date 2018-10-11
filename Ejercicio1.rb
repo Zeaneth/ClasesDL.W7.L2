@@ -17,4 +17,5 @@ a = [1, 2, 3, 9, 1, 4, 5, 2, 3, 6, 6]
 # 1:
 print a.map { |x| x + 1 }
 # 2:
+print a.map { |x| x.to_f }
 
