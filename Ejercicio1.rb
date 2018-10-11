@@ -21,3 +21,4 @@ print a.map { |x| x.to_f }
 # 3:
 print a.map { |x| x.to_s }
 # 4:
+print a.reject { |x| x < 5}
