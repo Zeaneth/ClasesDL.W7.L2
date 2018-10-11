@@ -19,4 +19,6 @@ print nombres.select { |x| x.length > 5 }
 # .map minus
 print nombres.map { |x| x.downcase }
 # .select P
-print nombres.select { |x| x.start_with?("P")}
+print nombres.select { |x| x.start_with?("P") }
+# .map (1st)
+print nombres.map { |x| x.length }
