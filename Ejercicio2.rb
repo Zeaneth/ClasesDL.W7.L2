@@ -18,3 +18,5 @@ nombres = ["Violeta", "Andino", "Clemente", "Javiera", "Paula", "Pia", "Ray"]
 print nombres.select { |x| x.length > 5 }
 # .map minus
 print nombres.map { |x| x.downcase }
+# .select P
+print nombres.select { |x| x.start_with?("P")}
