@@ -18,3 +18,9 @@
 #7. Opción 8: Muestra el promedio de las edades del grupo.
 #8. Opción 9: Muestra dos listas de personas, una por cada género.
 #9. El menú debe repetirse hasta que el usuario ingrese la opción 10 (salir).
+
+# 1. Información de problema
+
+# 2. Declarar el procesamiento
+
+# 3. Procesar
