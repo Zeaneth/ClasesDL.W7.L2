@@ -19,7 +19,9 @@
 #8. Opción 9: Muestra dos listas de personas, una por cada género.
 #9. El menú debe repetirse hasta que el usuario ingrese la opción 10 (salir).
 
-# 1. Información de problema  #%w convierte todos los elementos el arreglo en strings
+# 1. Información de problema  
+#%w convierte todos los elementos el arreglo en strings
+
 opciones_menu = ('Opción 1: Ingresar datos', 
                 'Opción 2: Editar existente', 
                 'Opción 3: Eliminar existente', 
@@ -32,6 +34,64 @@ opciones_menu = ('Opción 1: Ingresar datos',
                 'Opción 10: Salir del menú')
 
 
+
 # 2. Declarar el procesamiento
+def mostrar_menu(menu)
+    puts menu
+end
+
+
+# Opción 1
+def ingresar_persona 
+
+end
+
+# Opción 2
+def editar_persona
+
+end
+
+# Opción 3
+def eliminar_persona
+
+end
+
+# Opción 4
+def mostrar_grupo
+
+end
+
+# Opción 5
+def mostrar_comunas_grupo
+
+end
+
+# Opción 6
+def mostrar_grupo_edad
+
+end
+
+# Opción 7
+def mostrar_suma_edad
+
+end
+
+# Opción 8
+def mostrar_promedio_edad
+
+end
+
+# Opción 9
+def mostrar_grupo_genero
+
+end
+
+# Opción 10
+def salir_menu
+    exit
+end
+
+
 
 # 3. Procesar
+mostrar_menu(opciones_menu)
