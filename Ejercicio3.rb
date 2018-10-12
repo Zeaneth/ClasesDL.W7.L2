@@ -33,26 +33,32 @@ opciones_menu = ['Opción 1: Ingresar datos',
                 'Opción 9: Mostrar listas de personas, según género', 
                 'Opción 10: Salir del menú']
 
-
+grupo_alumnos = {}
 
 # 2. Declarar el procesamiento
 def mostrar_menu(menu)
     puts menu
 end
 
+def mostrar(mensaje)
+    puts mensaje
+end
 
 # Opción 1
-def ingresar_persona 
-
+def ingresar_alumno(grupo)  
+    nuevo_alumno = Hash.new { |grupo, alumno| grupo[alumno] = "Nuevo alumno: #{alumno}"}
+        @name = params[:name]
+        @age  = params[:age]
+      end
 end
 
 # Opción 2
-def editar_persona
+def editar_alumno
 
 end
 
 # Opción 3
-def eliminar_persona
+def eliminar_alumno
 
 end
 
@@ -95,3 +101,4 @@ end
 
 # 3. Procesar
 mostrar_menu(opciones_menu)
+mostrar_instruccion(instruccion)
