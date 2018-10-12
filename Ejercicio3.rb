@@ -19,7 +19,18 @@
 #8. Opción 9: Muestra dos listas de personas, una por cada género.
 #9. El menú debe repetirse hasta que el usuario ingrese la opción 10 (salir).
 
-# 1. Información de problema
+# 1. Información de problema  #%w convierte todos los elementos el arreglo en strings
+opciones_menu = ('Opción 1: Ingresar datos', 
+                'Opción 2: Editar existente', 
+                'Opción 3: Eliminar existente', 
+                'Opción 4: Mostrar la cantidad de personas', 
+                'Opción 5: Mostrar comunas de personas', 
+                'Opción 6: Mostrar lista de personas entre 20 y 25', 
+                'Opción 7: Mostrar suma de edades de todos', 
+                'Opción 8: Mostrar promedio de edades de todos (grupo)',
+                'Opción 9: Mostrar listas de personas, según género',
+                'Opción 10: Salir del menú')
+
 
 # 2. Declarar el procesamiento
 
