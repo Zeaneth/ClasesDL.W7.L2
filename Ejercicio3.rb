@@ -35,21 +35,45 @@ opciones_menu = ['Opción 1: Ingresar datos',
 
 grupo_alumnos = {}
 
+opcion_seleccionada = 0
+
+opcion_salida = opciones_menu.length
+
+instrucciones = 'Seleccione una opción para avanzar :)'
+
+instrucciones_nuevas = 'Seleccione una nueva opción para avanzar :)'
+
 # 2. Declarar el procesamiento
 def mostrar_menu(menu)
-    puts menu
+  puts menu
 end
 
-def mostrar(mensaje)
-    puts mensaje
+def mostrar_instrucciones(instruccion)
+  puts instruccion
+end
+
+def seleccionar_opcion(opciones)
+  alternativa_seleccionada = gets.chomp
+  alternativa_transformada = alternativa_seleccionada.to_f.to_i
+  cantidad_opciones = opciones.length
+
+  while !(0 < alternativa_transformada and alternativa_transformada <= cantidad_opciones)
+    puts "Escribiste '#{alternativa_seleccionada}', y ésta es una opción no válida :(."
+    puts "Debes escoger un número entre '1' y '#{cantidad_opciones}'"
+    alternativa_seleccionada = gets.chomp
+    alternativa_transformada = alternativa_seleccionada.to_f.to_i
+  end
+  return alternativa_transformada
 end
 
 # Opción 1
 def ingresar_alumno(grupo)  
-    nuevo_alumno = Hash.new { |grupo, alumno| grupo[alumno] = "Nuevo alumno: #{alumno}"}
-        @name = params[:name]
-        @age  = params[:age]
-      end
+    puts 'Eligió ingresar los datos de un estudiante. A continuación le pediremos los datos según corresponda:'
+    puts '¿Cuál es el nombre del estudiante?'
+    nuevo_alumno = {} #Igual a hola = Hash.new
+    nombre_alumno = gets.chomp
+    nuevo_alumno < nombre_alumno
+    print nuevo_alumno
 end
 
 # Opción 2
@@ -100,5 +124,44 @@ end
 
 
 # 3. Procesar
+mostrar_instrucciones(instrucciones)
 mostrar_menu(opciones_menu)
-mostrar_instruccion(instruccion)
+
+while (opcion_seleccionada != opcion_salida) do
+    opcion_seleccionada = seleccionar_opcion(opciones_menu)
+    case opcion_seleccionada
+    when 1
+        ingresar_alumno(grupo_alumnos)
+        mostrar_instrucciones(instrucciones_nuevas)
+    when 2
+        editar_alumno(grupo_alumnos)
+        mostrar_instrucciones(instrucciones_nuevas)
+    when 3
+        eliminar_alumno(grupo_alumnos)
+        mostrar_instrucciones(instrucciones_nuevas)
+    when 3
+        eliminar_alumno(grupo_alumnos)
+        mostrar_instrucciones(instrucciones_nuevas)
+    when 4
+        eliminar_alumno(grupo_alumnos)
+        mostrar_instrucciones(instrucciones_nuevas)
+    when 5
+        eliminar_alumno(grupo_alumnos)
+        mostrar_instrucciones(instrucciones_nuevas)
+    when 6
+        eliminar_alumno(grupo_alumnos)
+        mostrar_instrucciones(instrucciones_nuevas)
+    when 7
+        eliminar_alumno(grupo_alumnos)
+        mostrar_instrucciones(instrucciones_nuevas)
+    when 8
+        eliminar_alumno(grupo_alumnos)
+        mostrar_instrucciones(instrucciones_nuevas)
+    when 9
+        eliminar_alumno(grupo_alumnos)
+        mostrar_instrucciones(instrucciones_nuevas)
+    when opcion_salida
+        salir_menu
+        break
+    end
+end
