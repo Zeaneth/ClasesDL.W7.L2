@@ -33,7 +33,7 @@ opciones_menu = ['Opción 1: Ingresar datos',
                 'Opción 9: Mostrar listas de personas, según género', 
                 'Opción 10: Salir del menú']
 
-grupo_alumnos = {}
+curso_estudiantes = {}
 
 opcion_seleccionada = 0
 
@@ -70,10 +70,19 @@ end
 def ingresar_alumno(grupo)  
     puts 'Eligió ingresar los datos de un estudiante. A continuación le pediremos los datos según corresponda:'
     puts '¿Cuál es el nombre del estudiante?'
-    nuevo_alumno = {} #Igual a hola = Hash.new
-    nombre_alumno = gets.chomp
-    nuevo_alumno < nombre_alumno
-    print nuevo_alumno
+    nombre_alumno = gets.chomp.capitalize!
+    puts '¿Cuál es la edad del estudiante?'
+    edad_alumno = gets.chomp.to_i
+    puts '¿Cuál es la comuna donde vive el estudiante?'
+    comuna_alumno = gets.chomp.capitalize!
+    puts '¿Cuál es el género (masculino o femenino) del estudiante?'
+    genero_alumno = gets.chomp.capitalize!
+    nuevo_alumno = Array.new
+    nuevo_alumno.push(edad_alumno)
+    nuevo_alumno.push(comuna_alumno)
+    nuevo_alumno.push(genero_alumno)
+    grupo[nombre_alumno.to_sym] = nuevo_alumno
+    print grupo
 end
 
 # Opción 2
@@ -131,34 +140,34 @@ while (opcion_seleccionada != opcion_salida) do
     opcion_seleccionada = seleccionar_opcion(opciones_menu)
     case opcion_seleccionada
     when 1
-        ingresar_alumno(grupo_alumnos)
+        ingresar_alumno(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when 2
-        editar_alumno(grupo_alumnos)
+        editar_alumno(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when 3
-        eliminar_alumno(grupo_alumnos)
+        eliminar_alumno(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when 3
-        eliminar_alumno(grupo_alumnos)
+        eliminar_alumno(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when 4
-        eliminar_alumno(grupo_alumnos)
+        eliminar_alumno(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when 5
-        eliminar_alumno(grupo_alumnos)
+        eliminar_alumno(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when 6
-        eliminar_alumno(grupo_alumnos)
+        eliminar_alumno(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when 7
-        eliminar_alumno(grupo_alumnos)
+        eliminar_alumno(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when 8
-        eliminar_alumno(grupo_alumnos)
+        eliminar_alumno(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when 9
-        eliminar_alumno(grupo_alumnos)
+        eliminar_alumno(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when opcion_salida
         salir_menu
