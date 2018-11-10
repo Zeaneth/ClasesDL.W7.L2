@@ -39,9 +39,9 @@ opcion_seleccionada = 0
 
 opcion_salida = opciones_menu.length
 
-instrucciones = 'Seleccione una opción para avanzar :)'
+instrucciones = "Seleccione una opción para avanzar :) \n"
 
-instrucciones_nuevas = 'Seleccione una nueva opción para avanzar :)'
+instrucciones_nuevas = "Seleccione una nueva opción para avanzar :) \n"
 
 # 2. Declarar el procesamiento
 def mostrar_menu(menu)
@@ -59,7 +59,7 @@ def seleccionar_opcion(opciones)
 
   while !(0 < alternativa_transformada and alternativa_transformada <= cantidad_opciones)
     puts "Escribiste '#{alternativa_seleccionada}', y ésta es una opción no válida :(."
-    puts "Debes escoger un número entre '1' y '#{cantidad_opciones}'"
+    puts "Debes escoger un número entre '1' y '#{cantidad_opciones}'\n"
     alternativa_seleccionada = gets.chomp
     alternativa_transformada = alternativa_seleccionada.to_f.to_i
   end
@@ -85,6 +85,7 @@ def ingresar_alumno(grupo)
     nuevo_alumno.push(comuna_alumno.capitalize)
     nuevo_alumno.push(genero_alumno.capitalize)
     grupo[nombre_alumno.capitalize.to_sym] = nuevo_alumno
+    puts "\n"
     print grupo
 end
 
@@ -109,26 +110,26 @@ def editar_alumno(grupo)
         grupo[nombre_alumno.capitalize.to_sym] = nuevo_alumno
         puts "Los datos modificados para #{nombre_alumno.capitalize} son #{grupo}"
     else
-        puts "El nombre señalado no está en el registro de curso disponible."
+        puts "El nombre señalado no está en el registro de curso disponible :( .\n"
     end
 end
 
 # Opción 3
 def eliminar_alumno(grupo)
-    puts '¿Cuál de los siguientes es el estudiante que quiere editar?'
+    puts "¿Cuál de los siguientes es el estudiante que quiere borrar? \n"
     grupo.each_key { |nombre| print "#{nombre}"}
     nombre_alumno = gets.chomp
     if grupo.has_key?(nombre_alumno.capitalize.to_sym)
         grupo.delete(nombre_alumno.capitalize.to_sym)
-        puts "El estudiante de nombre #{nombre_alumno.capitalize} ha sido borrado del registro :)"
+        puts "El estudiante de nombre #{nombre_alumno.capitalize} ha sido borrado del registro :)\n"
     else
-        puts "El nombre señalado no está en el registro de curso disponible."
+        puts "El nombre señalado no está en el registro de curso disponible :( \n."
     end
 end
 
 # Opción 4
-def mostrar_grupo
-
+def mostrar_grupo(grupo)
+    puts "la cantidad de estudiantes del grupo de curso es de #{grupo.length}"
 end
 
 # Opción 5
@@ -179,14 +180,11 @@ while (opcion_seleccionada != opcion_salida) do
     when 3
         eliminar_alumno(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
-    when 3
-        eliminar_alumno(curso_estudiantes)
-        mostrar_instrucciones(instrucciones_nuevas)
     when 4
-        eliminar_alumno(curso_estudiantes)
+        mostrar_grupo(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when 5
-        eliminar_alumno(curso_estudiantes)
+        mostrar_comunas_grupo(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when 6
         eliminar_alumno(curso_estudiantes)
