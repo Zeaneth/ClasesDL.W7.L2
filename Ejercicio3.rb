@@ -119,6 +119,11 @@ def eliminar_alumno(grupo)
     grupo.each_key { |nombre| print "#{nombre}"}
     nombre_alumno = gets.chomp
     if grupo.has_key?(nombre_alumno.capitalize.to_sym)
+        grupo.delete(nombre_alumno.capitalize.to_sym)
+        puts "El estudiante de nombre #{nombre_alumno.capitalize} ha sido borrado del registro :)"
+    else
+        puts "El nombre señalado no está en el registro de curso disponible."
+    end
 end
 
 # Opción 4
