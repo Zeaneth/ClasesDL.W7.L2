@@ -70,29 +70,55 @@ end
 def ingresar_alumno(grupo)  
     puts 'Eligió ingresar los datos de un estudiante. A continuación le pediremos los datos según corresponda:'
     puts '¿Cuál es el nombre del estudiante?'
-    nombre_alumno = gets.chomp.capitalize!
+    nombre_alumno = gets.chomp
+    # print nombre_alumno
     puts '¿Cuál es la edad del estudiante?'
     edad_alumno = gets.chomp.to_i
+    # print edad_alumno
     puts '¿Cuál es la comuna donde vive el estudiante?'
-    comuna_alumno = gets.chomp.capitalize!
+    comuna_alumno = gets.chomp
+    # print comuna_alumno
     puts '¿Cuál es el género (masculino o femenino) del estudiante?'
-    genero_alumno = gets.chomp.capitalize!
+    genero_alumno = gets.chomp
     nuevo_alumno = Array.new
     nuevo_alumno.push(edad_alumno)
-    nuevo_alumno.push(comuna_alumno)
-    nuevo_alumno.push(genero_alumno)
-    grupo[nombre_alumno.to_sym] = nuevo_alumno
+    nuevo_alumno.push(comuna_alumno.capitalize)
+    nuevo_alumno.push(genero_alumno.capitalize)
+    grupo[nombre_alumno.capitalize.to_sym] = nuevo_alumno
     print grupo
 end
 
 # Opción 2
-def editar_alumno
-
+def editar_alumno(grupo)
+    puts '¿Cuál de los siguientes es el estudiante que quiere editar?'
+    grupo.each_key { |nombre| print "#{nombre}"}
+    nombre_alumno = gets.chomp
+    if grupo.has_key?(nombre_alumno.capitalize.to_sym)
+        puts "¿Cuál es el nuevo nombre designado para #{nombre_alumno}?"
+        nombre_alumno = gets.chomp
+        puts "¿Cuál es la nueva edad designado para #{nombre_alumno}?"
+        edad_alumno = gets.chomp
+        puts "¿Cuál es la nueva comuna donde vive #{nombre_alumno}?"
+        comuna_alumno = gets.chomp
+        puts "¿Cuál es el nuevo género (masculino o femenino) designado para #{nombre_alumno}?"
+        genero_alumno = gets.chomp
+        nuevo_alumno = []
+        nuevo_alumno.push(edad_alumno.to_i)
+        nuevo_alumno.push(comuna_alumno.capitalize)
+        nuevo_alumno.push(genero_alumno.capitalize)
+        grupo[nombre_alumno.capitalize.to_sym] = nuevo_alumno
+        puts "Los datos modificados para #{nombre_alumno.capitalize} son #{grupo}"
+    else
+        puts "El nombre señalado no está en el registro de curso disponible."
+    end
 end
 
 # Opción 3
-def eliminar_alumno
-
+def eliminar_alumno(grupo)
+    puts '¿Cuál de los siguientes es el estudiante que quiere editar?'
+    grupo.each_key { |nombre| print "#{nombre}"}
+    nombre_alumno = gets.chomp
+    if grupo.has_key?(nombre_alumno.capitalize.to_sym)
 end
 
 # Opción 4
