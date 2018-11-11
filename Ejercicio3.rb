@@ -33,7 +33,7 @@ opciones_menu = ['Opción 1: Ingresar datos',
                 'Opción 9: Mostrar listas de personas, según género', 
                 'Opción 10: Salir del menú']
 
-curso_estudiantes = {:Zamiz=>[25, 'Ñuñoa', 'Masculino'], :Nicole=>[19, 'La Florida', 'Femenino'], :Santiago=>[23, 'Peñalolén', 'Masculino']}
+curso_estudiantes = 0
 
 opcion_seleccionada = 0
 
@@ -78,7 +78,7 @@ def ingresar_alumno(grupo)
     puts '¿Cuál es la comuna donde vive el estudiante?'
     comuna_alumno = gets.chomp
     # print comuna_alumno
-    puts '¿Cuál es el género (masculino o femenino) del estudiante?'
+    puts '¿Cuál es el género (opciones: masculino o femenino) del estudiante?'
     genero_alumno = gets.chomp
     nuevo_alumno = Array.new
     nuevo_alumno.push(edad_alumno)
@@ -171,12 +171,23 @@ def mostrar_promedio_edad(grupo)
 end
 
 # Opción 9
-def mostrar_grupo_genero
-
+def mostrar_grupo_genero(grupo)
+    puts 'Escogió la opción 9 para mostrar grupos de estudiantes según género.'
+    grupo_masculino = []
+    grupo_femenino = []
+    grupo.each do |key, value|
+        if value[2] == 'Masculino'
+            grupo_masculino.push(key)
+        else
+            grupo_femenino.push(key)
+        end
+    end
+    puts "El grupo femenino está compuesto por #{grupo_femenino} y el masculino por #{grupo_masculino}"
 end
 
 # Opción 10
 def salir_menu
+    puts 'Escogió la opción 10 para salir del menú. Adiosito~'
     exit
 end
 
