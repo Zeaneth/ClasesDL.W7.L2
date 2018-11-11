@@ -33,7 +33,7 @@ opciones_menu = ['Opción 1: Ingresar datos',
                 'Opción 9: Mostrar listas de personas, según género', 
                 'Opción 10: Salir del menú']
 
-curso_estudiantes = {:Zamiz=>[25, 'Ñuñoa', 'Masculino'], :Nicole=>[19, 'Peñalolén', 'Femenino'], :Santiago=>[23, 'Peñalolén', 'Masculino']}
+curso_estudiantes = {:Zamiz=>[25, 'Ñuñoa', 'Masculino'], :Nicole=>[19, 'La Florida', 'Femenino'], :Santiago=>[23, 'Peñalolén', 'Masculino']}
 
 opcion_seleccionada = 0
 
@@ -146,21 +146,28 @@ def mostrar_grupo_edad(grupo, edad1 = 20, edad2 = 25)
     puts "Escogió la opción 6 para mostrar la cantidad de estudiantes con edades entre #{edad1} y #{edad2}."
     cantidad_alumnos = 0
     grupo.each do |key, value|
-        if value[0] >= edad1 && value[0] <= edad2 
-         cantidad_alumnos += 1
+        if value[0] >= edad1 && value[0] <= edad2
+            cantidad_alumnos += 1
         end
     end
-    puts "La cantidad de estudiantes con los parámetros señalados es de #{cantidad_alumnos} personas"
+    puts "La cantidad de estudiantes con los parámetros señalados es de #{cantidad_alumnos} personas."
 end
 
 # Opción 7
-def mostrar_suma_edad
-
+def mostrar_suma_edad(grupo)
+    puts 'Escogió la opción 7 para mostrar la suma de edades entre los estudiantes del curso.'
+    sumatoria_edades_alumnos = 0
+    grupo.each { |key, value| sumatoria_edades_alumnos += value[0]}
+    puts "La sumatoria de edades entre los estudiantes es de #{sumatoria_edades_alumnos} años."
 end
 
 # Opción 8
-def mostrar_promedio_edad
-
+def mostrar_promedio_edad(grupo)
+    puts 'Escogió la opción 8 para mostrar el promedio de edades entre los estudiantes del curso.'
+    sumatoria_edades_alumnos = 0
+    grupo.each { |key, value| sumatoria_edades_alumnos += value[0]}
+    promedio_edades_alumnos = sumatoria_edades_alumnos.to_f / (grupo.length)
+    puts "El promedio de edades de todos los estudiantes del curso es de #{promedio_edades_alumnos.round(2)} años."
 end
 
 # Opción 9
