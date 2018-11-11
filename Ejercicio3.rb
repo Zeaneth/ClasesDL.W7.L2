@@ -33,7 +33,7 @@ opciones_menu = ['Opción 1: Ingresar datos',
                 'Opción 9: Mostrar listas de personas, según género', 
                 'Opción 10: Salir del menú']
 
-curso_estudiantes = {}
+curso_estudiantes = {:Zamiz=>[25, 'Ñuñoa', 'Masculino'], :Nicole=>[23, 'Peñalolén', 'Femenino']}
 
 opcion_seleccionada = 0
 
@@ -91,6 +91,7 @@ end
 
 # Opción 2
 def editar_alumno(grupo)
+    puts 'Escogió la opción 2 para editar estudiantes.'
     puts '¿Cuál de los siguientes es el estudiante que quiere editar?'
     grupo.each_key { |nombre| print "#{nombre}"}
     nombre_alumno = gets.chomp
@@ -116,6 +117,7 @@ end
 
 # Opción 3
 def eliminar_alumno(grupo)
+    puts 'Escogió la opción 3 para eliminar del registro un estudiante.'
     puts "¿Cuál de los siguientes es el estudiante que quiere borrar? \n"
     grupo.each_key { |nombre| print "#{nombre}"}
     nombre_alumno = gets.chomp
@@ -129,17 +131,20 @@ end
 
 # Opción 4
 def mostrar_grupo(grupo)
-    puts "la cantidad de estudiantes del grupo de curso es de #{grupo.length}"
+    puts 'Escogió la opción 4 para mostrar la cantidad de estudiantes.'
+    puts "La cantidad de estudiantes del grupo de curso es de #{grupo.length} personas"
 end
 
 # Opción 5
-def mostrar_comunas_grupo
-
+def mostrar_comunas_grupo(grupo)
+    puts 'Escogió la opción 5 para mostrar la cantidad de comunas.'
+    grupo.each {|key, value| puts "La comuna de #{key} es #{value[1]};"}
 end
 
 # Opción 6
-def mostrar_grupo_edad
-
+def mostrar_grupo_edad(grupo)
+    puts 'Escogió la opción 6 para mostrar la edad de cada estudiante.'
+    grupo.each {|key, value| puts "La edad de #{key} es #{value[0]} años;"}
 end
 
 # Opción 7
