@@ -33,7 +33,7 @@ opciones_menu = ['Opción 1: Ingresar datos',
                 'Opción 9: Mostrar listas de personas, según género', 
                 'Opción 10: Salir del menú']
 
-curso_estudiantes = {:Zamiz=>[25, 'Ñuñoa', 'Masculino'], :Nicole=>[23, 'Peñalolén', 'Femenino']}
+curso_estudiantes = {:Zamiz=>[25, 'Ñuñoa', 'Masculino'], :Nicole=>[19, 'Peñalolén', 'Femenino'], :Santiago=>[23, 'Peñalolén', 'Masculino']}
 
 opcion_seleccionada = 0
 
@@ -138,13 +138,19 @@ end
 # Opción 5
 def mostrar_comunas_grupo(grupo)
     puts 'Escogió la opción 5 para mostrar la cantidad de comunas.'
-    grupo.each {|key, value| puts "La comuna de #{key} es #{value[1]};"}
+    grupo.each { |key, value| puts "La comuna de #{key} es #{value[1]};"}
 end
 
 # Opción 6
-def mostrar_grupo_edad(grupo)
-    puts 'Escogió la opción 6 para mostrar la edad de cada estudiante.'
-    grupo.each {|key, value| puts "La edad de #{key} es #{value[0]} años;"}
+def mostrar_grupo_edad(grupo, edad1 = 20, edad2 = 25)
+    puts "Escogió la opción 6 para mostrar la cantidad de estudiantes con edades entre #{edad1} y #{edad2}."
+    cantidad_alumnos = 0
+    grupo.each do |key, value|
+        if value[0] >= edad1 && value[0] <= edad2 
+         cantidad_alumnos += 1
+        end
+    end
+    puts "La cantidad de estudiantes con los parámetros señalados es de #{cantidad_alumnos} personas"
 end
 
 # Opción 7
@@ -192,16 +198,16 @@ while (opcion_seleccionada != opcion_salida) do
         mostrar_comunas_grupo(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when 6
-        eliminar_alumno(curso_estudiantes)
+        mostrar_grupo_edad(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when 7
-        eliminar_alumno(curso_estudiantes)
+        mostrar_suma_edad(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when 8
-        eliminar_alumno(curso_estudiantes)
+        mostrar_promedio_edad(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when 9
-        eliminar_alumno(curso_estudiantes)
+        mostrar_grupo_genero(curso_estudiantes)
         mostrar_instrucciones(instrucciones_nuevas)
     when opcion_salida
         salir_menu
